@@ -1,0 +1,65 @@
+@import './reset.scss';
+
+.container {
+    width: 256px;
+    margin: 50px auto 0;
+
+    ul{
+        width: 256px; height: 320px;
+        background-color: #CCC;
+        li {
+            width: 256px; height: 64px;
+            padding: 25px 32px;
+            position: relative;
+            box-sizing: border-box;
+            border-top-right-radius: 32px;
+            border-bottom-right-radius: 32px;
+            font: {
+                size: 14px;
+                weight: bolder;
+            };
+            color: #666;
+
+            span {
+                width: 60px; height: 64px;
+                display: block;
+                position: absolute;
+                top: 0; right: 4px;
+                background: {
+                    image: url(../img/icons.png);
+                    size: 100%;
+                    repeat: no-repeat;
+                    position: center 0;
+                };
+            }
+
+            @for $num from 1 through 5 {
+                &:nth-child(#{$num}) span {
+                    background-position: center calc(-64px * (#{$num} - 1));
+                }
+            }
+
+            &:hover {
+                width: 288px;
+                font-size: 15px; color: #fff;
+                text-shadow: 1px 1px #666;
+                box-shadow: 2px 2px 3px #666;
+            }
+            &:nth-child(1):hover {
+                background-color: #0063dc;
+            }
+            &:nth-child(2):hover {
+                background-color: #33ccff;
+            }
+            &:nth-child(3):hover {
+                background-color: #3b5769;
+            }
+            &:nth-child(4):hover {
+                background-color: #065b2e;
+            }
+            &:nth-child(5):hover {
+                background-color: #5fe1e1;
+            }
+        }
+    }
+}

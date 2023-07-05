@@ -1,0 +1,70 @@
+@import './reset.scss';
+
+$url: '../img/';
+$liWidth: 80px;
+
+
+@mixin center {
+    display: flex;
+    flex-wrap: wrap; justify-content: center;
+    @content;
+}
+
+body {
+    background: {
+        image: url('#{$url}bg.jpg');
+        repeat: no-repeat;
+        size: cover;
+        attachment: fixed;
+    };
+}
+
+.container {
+    height: 100vh;
+    margin: 0 auto;
+    @include center {
+        align-items: center;
+    };
+
+    ul {
+        width: calc(($liWidth * 7) + 72px + 20px);
+        @include center;
+
+        li {
+            width: $liWidth; height: $liWidth + 4px;
+            margin: {
+                right: 12px;
+                bottom: 12px
+            };
+            overflow: hidden;
+            box-sizing: border-box;
+            border: 3px #fff solid;
+            border-radius: 12px;
+            transform: skewX(-14deg);
+
+            &:nth-child(7), &:nth-child(14), &:nth-child(21), &:nth-child(28) {
+                margin-right: 0px;
+            };
+            &:nth-child(n + 29) {
+                margin-bottom: 0px;
+            }
+            
+            .image {
+                width: 140%; height: 100%;
+                display: block;
+                transform: skewX(14deg) translateX(-14px);
+                background: {
+                    position: center;
+                    repeat: no-repeat;
+                    size: 100%;
+                };
+            }
+            
+            @for $imgNum from 1 through 32 {
+                &:nth-child(#{$imgNum}) .image {
+                    background-image: url('#{$url}hero#{$imgNum}.png');
+            }
+        }
+        }
+    }
+}
