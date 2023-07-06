@@ -1,5 +1,12 @@
-@charset "UTF-8";
-/* CSS Document */
+
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -19,6 +26,7 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    font-style:normal;
     font-weight:normal;
 }
 
@@ -28,10 +36,10 @@ body {
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section { 
-    display:block;
+	display:block;
 }
 
-ul,ol,li {
+nav ul {
     list-style:none;
 }
 
@@ -45,15 +53,19 @@ q:before, q:after {
     content:none;
 }
 
-a {text-decoration:none;
+a {
     margin:0;
     padding:0;
     font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration:none;
+    color:#000;
 }
 
 /* change colours to suit your needs */
 ins {
-    /* background-color:#ff9; */
+    background-color:#ff9;
     color:#000;
     text-decoration:none;
 }
@@ -80,11 +92,6 @@ table {
     border-spacing:0;
 }
 
-input, select {
-    vertical-align:middle;
-}
-
-
 /* change border colour to suit your needs */
 hr {
     display:block;
@@ -93,4 +100,24 @@ hr {
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* �{���T���v���p�Ɉȉ��̃R�[�h��ǉ����Ă��܂��B */
+ol, ul {
+    list-style: none;
+}
+/* clearfix */
+.cf {
+	zoom: 1;
+}
+.cf:before, .cf:after {
+	content: "";
+	display: table;
+}
+.cf:after {
+	clear: both;
 }

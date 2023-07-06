@@ -1,0 +1,16 @@
+.hide {
+    width: 0; height: 0;
+    position: absolute;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+ins {
+    background-color: transparent;
+}
+
+/* 
+width: 1168px;
+font-size: 12px / 32px;
+color: #000 / #fff / #888 / #ddd / #ca7379;
+*/
