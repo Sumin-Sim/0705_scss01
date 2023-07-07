@@ -1,0 +1,58 @@
+@use './variable' as *;
+@use './mixin' as *;
+
+header {
+    padding: ($basic * 4.5) 0 ($basic * 1.5);
+    position: relative;
+    background-color: $header;
+}
+div.bottom {
+    h1 {
+        margin-bottom: $basic * 3;
+        font-size: 0;
+        @include center;
+    }
+    nav {
+        ul {
+            width: $basic * 40;
+            @include margin;
+            @include layout($wrap: wrap, $start: space-around);
+            li {
+                padding-bottom: ($basic / 2);
+                position: relative;
+                a {
+                    font: {
+                        size: $small; weight: 900;
+                    };
+                    color: $dark;
+                }
+                span {
+                    width: calc($full + ($basic / 2)); height: 1px;
+                    position: absolute;
+                    bottom: 0; left: ($basic / -4);
+                    background-color: transparent;
+                }
+                &:hover {
+                    span {
+                        background-color: $dark;
+                    }
+                }
+            }
+        }
+    }
+}
+div.top {
+    width: 100%; height: $basic * 2.5;
+    padding: ($basic * 0.75) 0;
+    position: absolute;
+    top: 0; left: 0;
+    box-sizing: border-box;
+    background-color: $lightest;
+    p {
+        width: $content;
+        @include margin;
+        a {
+            font-size: $small; color: $light;
+        }
+    }
+}

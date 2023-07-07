@@ -1,0 +1,145 @@
+@use './variable' as *;
+@use './mixin' as *;
+
+article {
+    > div {
+        width: $content;
+        @include margin; padding: ($basic * 6) 0;
+        h3 {
+            margin-bottom: $basic * 5;
+            font: {
+                size: $large; weight: 900;
+            };
+            @include center; letter-spacing: ($basic / 2);
+        }
+    }
+}
+div.btn {
+    margin-bottom: $basic * 2;
+    @include layout;
+    position: relative;
+    p {
+        &.left {
+            font-size: $small; color: $light;
+        }
+        &.right {
+        width: $basic * 12; height: $basic * 2;
+        @include layout($start: center);
+        @include border;
+        font-size: $small; color: $light;
+            i {
+                margin-left: ($basic / 2);
+            }
+        }
+    }
+    ul {
+        width: $basic * 12; height: $basic * 12;
+        position: absolute;
+        top: 0; right: 0;
+        font-size: $small; color: $light;
+        background-color: $white;
+        z-index: 100;
+        display: none;
+        li {
+            height: $basic * 2;
+            @include layout($start: center);
+            @include border($radius: 0); border-top: none;
+            &:first-child {
+                border: {
+                    top: 1px solid $lighter;
+                    top-left-radius: $basic;
+                    top-right-radius: $basic;
+                };
+            }
+            &:last-child {
+                border: {
+                    bottom-left-radius: $basic;
+                    bottom-right-radius: $basic;
+                };
+            }
+            i {
+                margin-left: ($basic / 2);
+            }
+        }
+    }
+}
+div.gallery {
+    @include layout($wrap: wrap);
+    figure {
+        width: $basic * 17;
+        margin-bottom: $basic * 3;
+        position: relative;
+        img {
+            width: $basic * 17; height: $basic * 22.5;
+            margin-bottom: $basic * 2;
+        }
+    }
+    dl {
+        dt {
+            margin-bottom: $basic;
+            font: {
+                size: $small; weight: 900;
+            }
+            @include center;
+        }
+        dd {
+            &:nth-of-type(1) {
+                margin-bottom: $basic * 1.5;
+                @include layout($start: center);
+                ins {
+                    margin-right: $basic;
+                    font: {
+                        size: $medium; weight: 900;
+                    };
+                    color: $red;
+                    text-decoration: none;
+                }
+                del {
+                    font-size: small; color: $light;
+                }
+            }
+            &:nth-of-type(2) {
+                @include layout;
+                button {
+                    &:nth-child(1) {
+                        width: $basic * 8; height: $basic * 2;
+                        margin-right: $basic * 4.75;
+                        @include border;
+                        background-color: $white;
+                        font: {
+                            size: ($basic / 2); weight: 600;
+                        };
+                        letter-spacing: 1px;
+                    }
+                    &:nth-child(2) {
+                        width: $basic * 2; height: $basic * 2;
+                        margin-right: ($basic / 4);
+                        @include border;
+                        background-color: $white;
+                        font-size: $small;
+                    }
+                    &:nth-child(3) {
+                        width: $basic * 2; height: $basic * 2;
+                        @include border;
+                        background-color: $white;
+                        font-size: $small;
+                    }
+                }
+            }
+            &:nth-of-type(3) {
+                position: absolute;
+                bottom: $basic * 8.75; right: $basic / 2;
+                b {
+                    width: $basic * 3; height: $basic * 3;
+                    @include layout($start: center);
+                    background-color: $red;
+                    border-radius: 50%;
+                    font: {
+                        size: $small; weight: 900;
+                    };
+                    color: $white;
+                }
+            }
+        }
+    }
+}

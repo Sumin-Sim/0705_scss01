@@ -1,0 +1,63 @@
+@use './variable' as *;
+@use './mixin' as *;
+
+div#footer {
+    padding: ($basic * 4.5) 0 ($basic * 2.5);
+    background-color: $lightest;
+    aside {
+        width: $content;
+        @include margin($basic * 4.5);
+        @include layout($wrap: wrap, $vertical: flex-start);
+    }
+    dl {
+        width: ($full / 4);
+        dt {
+            margin-bottom: $basic * 2;
+            font: {
+                size: $medium; weight: 900;
+            };
+            letter-spacing: 3px;  text-indent: 4px;
+            span {
+                width: $basic * 6; height: 1px;
+                margin-top: ($basic / 2);
+                display: block;
+                background-color: $black;
+            }
+        }
+        dd {
+            margin-bottom: $basic;
+            padding-left: ($basic / 4);
+            &:last-child {
+                margin: 0;
+            }
+            a {
+                font-size: $small; color: $light;
+            }
+            address {
+                margin: ($basic / -4) 0 ($basic * 3);
+                font: {
+                    size: $medium; weight: 900;
+                };
+                color: $black;
+                line-height: $basic * 2;
+            }
+        }
+    }
+    footer {
+        width: $content;
+        @include margin;
+        @include layout;
+        small {
+            font-size: $small; color: $light;
+        }
+        ul {
+            @include layout;
+            li {
+                margin-left: ($basic / 2);
+                &:first-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

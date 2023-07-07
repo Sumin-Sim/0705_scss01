@@ -115,7 +115,7 @@ div.gallery>figure>figcaption>dl>dd:nth-of-type(2)>button:nth-child(1) {
     border: 1px #ddd solid;
     border-radius: 16px;
     background-color: #fff;
-    font-size: 1px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     letter-spacing: 1px;
     cursor: pointer;
 }

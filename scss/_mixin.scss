@@ -1,0 +1,19 @@
+@use './variable' as *;
+
+@mixin layout($wrap: nowrap, $start: space-between, $vertical: center) {
+    display: flex;
+    flex-wrap: $wrap; flex-direction: row;
+    justify-content: $start; align-items: $vertical;
+}
+@mixin margin($bottom: 0) {
+    margin: 0 auto; margin-bottom: $bottom;
+}
+@mixin center {
+    text-align: center;
+}
+@mixin border($radius: 16px) {
+    box-sizing: border-box;
+    border: 1px solid $lighter;
+    border-radius: $radius;
+    cursor: pointer;
+}
